@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimiko's Sanctuary - A Tribute</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeBtn" aria-label="Toggle theme">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </div>
+
+    <!-- Navigation System -->
+    <nav class="sanctuary-nav">
+        <div class="nav-container">
+            <button class="nav-btn active" data-area="entrance" aria-label="Entrance Zone">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Entrance</span>
+            </button>
+            <button class="nav-btn" data-area="window-perch" aria-label="Window Perch">
+                <span class="nav-icon">🪟</span>
+                <span class="nav-label">Window</span>
+            </button>
+            <button class="nav-btn" data-area="sunbeam" aria-label="Sunbeam Spot">
+                <span class="nav-icon">☀️</span>
+                <span class="nav-label">Sunbeam</span>
+            </button>
+            <button class="nav-btn" data-area="garden" aria-label="Garden Zone">
+                <span class="nav-icon">🌸</span>
+                <span class="nav-label">Garden</span>
+            </button>
+            <button class="nav-btn" data-area="memory" aria-label="Memory Bench">
+                <span class="nav-icon">🕯️</span>
+                <span class="nav-label">Memory</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="sanctuary">
+        <header class="sanctuary-header">
+            <h1>Sarora's Sanctuary</h1>
+            <p class="subtitle">A peaceful tribute to a beloved black Maine Coon</p>
+            <div class="header-controls">
+                <button id="memoryModeBtn" class="mode-btn" aria-label="Memory Mode">
+                    <span>🎵</span> Memory Mode
+                </button>
+            </div>
+        </header>
+
+        <div class="sanctuary-content">
+            <!-- Entrance Zone -->
+            <section class="zone entrance-zone active" data-area="entrance">
+                <h2>The Entrance</h2>
+                <div class="zone-content">
+                    <div class="entrance-container">
+                        <div class="kimiko-container">
+                            <img src="assets/images/kimiko_sitting.png" 
+                                 alt="Kimiko sitting at the entrance" 
+                                 class="kimiko-sitting"
+                                 id="kimikoEntrance">
+                            <div class="paw-prints">
+                                <div class="paw-print paw-1">🐾</div>
+                                <div class="paw-print paw-2">🐾</div>
+                                <div class="paw-print paw-3">🐾</div>
+                            </div>
+                            <div class="welcome-bell">
+                                <span class="bell-icon">🔔</span>
+                                <div class="bell-sound">*gentle jingle*</div>
+                            </div>
+                            <div class="zoom-area entrance-zoom" data-zoom="entrance-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="entrance-details">
+                            <div class="welcome-message">
+                                <h3>Welcome to Kimiko's Sanctuary</h3>
+                                <p>This is where Kimiko would greet you with her gentle purr and soft paw steps. Hover over her to hear her meow.</p>
+                            </div>
+                            <div class="entrance-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🐾</span>
+                                    <span>Gentle Greeting</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">💝</span>
+                                    <span>Warm Welcome</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🔔</span>
+                                    <span>Welcome Bell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Window Perch Zone -->
+            <section class="zone window-perch-zone" data-area="window-perch">
+                <h2>The Window Perch</h2>
+                <div class="zone-content">
+                    <div class="window-container">
+                        <div class="window-frame">
+                            <img src="assets/images/kimiko_sleeping.png" 
+                                 alt="Kimiko on the window perch" 
+                                 class="kimiko-window-perch"
+                                 id="kimikoWindowPerch">
+                            <div class="window-reflection"></div>
+                            <div class="window-sill"></div>
+
+                            <div class="zoom-area window-zoom" data-zoom="window-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="window-details">
+                            <div class="window-description">
+                                <h3>Kimiko's Favorite Spot</h3>
+                                <p>Here she would watch the world outside, dreaming peacefully. Her little bird feeder and cozy ledge made this her perfect sanctuary. Click to see her drift into dreams.</p>
+                            </div>
+                            <div class="window-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🌅</span>
+                                    <span>Sunset Views</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🕊️</span>
+                                    <span>Bird Watching</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🌾</span>
+                                    <span>Bird Feeder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sunbeam Spot Zone -->
+            <section class="zone sunbeam-zone" data-area="sunbeam">
+                <h2>The Sunbeam Spot</h2>
+                <div class="zone-content">
+                    <div class="sunbeam-container">
+                        <div class="sunbeam-area">
+                            <img src="assets/images/kimiko_sitting.png" 
+                                 alt="Kimiko in the sunbeam" 
+                                 class="kimiko-sunbeam"
+                                 id="kimikoSunbeam">
+                            <div class="sunbeam-effect"></div>
+                            <div class="dust-particles"></div>
+
+                            <div class="zoom-area sunbeam-zoom" data-zoom="sunbeam-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="sunbeam-details">
+                            <div class="sunbeam-description">
+                                <h3>Warm Sunshine Spot</h3>
+                                <p>Where Kimiko would bask in golden sunlight, stretching and relaxing. Her favorite blanket and morning coffee spot made this the perfect place for peaceful moments. Click to see her stretch.</p>
+                            </div>
+                            <div class="sunbeam-features">
+                                <div class="feature">
+                                    <span class="feature-icon">☀️</span>
+                                    <span>Warm Rays</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">😴</span>
+                                    <span>Peaceful Rest</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🛏️</span>
+                                    <span>Cozy Blanket</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Garden Zone -->
+            <section class="zone garden-zone" data-area="garden">
+                <h2>The Garden</h2>
+                <div class="zone-content">
+                    <div class="garden-container">
+                        <div class="garden-area" id="gardenArea">
+
+                            <div class="garden-description">
+                                <h3>Kimiko's Garden</h3>
+                                <p>Place flowers in Kimiko's peaceful garden. Each flower is a memory of her love. Watch for butterflies that visit her special place.</p>
+                            </div>
+                            <button class="flower-btn" id="placeFlowerBtn">
+                                🌸 Place Flower
+                            </button>
+                            <div class="garden-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🌺</span>
+                                    <span>Flower Memories</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">💕</span>
+                                    <span>Love Blooms</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🦋</span>
+                                    <span>Butterfly Visitors</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory Bench Zone -->
+            <section class="zone memory-zone" data-area="memory">
+                <h2>Memory Bench</h2>
+                <div class="zone-content">
+                    <div class="memory-container">
+                        <div class="candle-area">
+                            <img src="assets/images/candle_unlit.png" 
+                                 alt="Candle" 
+                                 class="candle"
+                                 id="candle">
+
+                            <div class="memory-description">
+                                <h3>Light a Candle</h3>
+                                <p>Light a candle in memory of Kimiko's beautiful spirit. Her light will always shine in our hearts. Photos and memories surround this peaceful place.</p>
+                            </div>
+                            <div class="zoom-area memory-zoom" data-zoom="memory-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="memory-features">
+                            <div class="feature">
+                                <span class="feature-icon">🕯️</span>
+                                <span>Eternal Light</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">💫</span>
+                                <span>Loving Memory</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">📸</span>
+                                <span>Precious Photos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Zoom Overlays -->
+        <div class="zoom-overlay" id="zoomOverlay">
+            <div class="zoom-content">
+                <button class="zoom-close" id="zoomClose">✕</button>
+                
+                <!-- Entrance Detail Zoom -->
+                <div class="zoom-detail" id="entrance-detail">
+                    <div class="zoom-header">
+                        <h2>Kimiko's Welcome</h2>
+                        <p>Her gentle greeting spot</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <img src="assets/images/kimiko_sitting.png" alt="Kimiko's welcome">
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🐾</span>
+                                <div class="detail-text">
+                                    <h4>Gentle Paw Steps</h4>
+                                    <p>Kimiko would always greet you with soft, careful steps, her tail held high with love.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🔔</span>
+                                <div class="detail-text">
+                                    <h4>Welcome Bell</h4>
+                                    <p>She had a special way of announcing her presence - a gentle jingle that meant love was near.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💝</span>
+                                <div class="detail-text">
+                                    <h4>Warm Greeting</h4>
+                                    <p>Every return home was met with her loving purr and gentle head bumps.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window Detail Zoom -->
+                <div class="zoom-detail" id="window-detail">
+                    <div class="zoom-header">
+                        <h2>Kimiko's Window World</h2>
+                        <p>Her favorite observation spot</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <img src="assets/images/kimiko_sleeping.png" alt="Kimiko at window">
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🕊️</span>
+                                <div class="detail-text">
+                                    <h4>Bird Watching</h4>
+                                    <p>She would spend hours watching the birds, her tail twitching with excitement.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌅</span>
+                                <div class="detail-text">
+                                    <h4>Sunset Views</h4>
+                                    <p>Golden hour was her favorite time, watching the world paint itself in warm colors.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌾</span>
+                                <div class="detail-text">
+                                    <h4>Bird Feeder</h4>
+                                    <p>She had her own little bird feeder, ensuring her feathered friends always had food.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sunbeam Detail Zoom -->
+                <div class="zoom-detail" id="sunbeam-detail">
+                    <div class="zoom-header">
+                        <h2>Kimiko's Sunshine Spot</h2>
+                        <p>Where warmth meets peace</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <img src="assets/images/kimiko_sitting.png" alt="Kimiko in sunbeam">
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">☀️</span>
+                                <div class="detail-text">
+                                    <h4>Warm Rays</h4>
+                                    <p>She would find the perfect sunbeam and stretch out, soaking in every golden ray.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🛏️</span>
+                                <div class="detail-text">
+                                    <h4>Cozy Blanket</h4>
+                                    <p>Her favorite blanket was always nearby, ready for afternoon naps in the warmth.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">😴</span>
+                                <div class="detail-text">
+                                    <h4>Peaceful Rest</h4>
+                                    <p>This was her meditation spot, where she could dream and rest in perfect contentment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory Detail Zoom -->
+                <div class="zoom-detail" id="memory-detail">
+                    <div class="zoom-header">
+                        <h2>Kimiko's Memory Corner</h2>
+                        <p>A place of eternal love</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <div class="zoom-candle-container">
+                                <img src="assets/images/candle_unlit.png" alt="Memory candle" id="zoomCandle" class="zoom-candle">
+                                <div class="zoom-candle-glow" id="zoomCandleGlow"></div>
+                                <div class="zoom-candle-hint">Click to light the candle</div>
+                            </div>
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🕯️</span>
+                                <div class="detail-text">
+                                    <h4>Eternal Light</h4>
+                                    <p>Her spirit shines on through this gentle flame, a beacon of love that never fades. Click the candle to light it in her memory.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📸</span>
+                                <div class="detail-text">
+                                    <h4>Precious Photos</h4>
+                                    <p>Every photo tells a story of love, laughter, and the beautiful moments we shared.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💫</span>
+                                <div class="detail-text">
+                                    <h4>Loving Memory</h4>
+                                    <p>In this quiet corner, we remember her gentle purr and the love she gave so freely.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="sanctuary-footer">
+            <p>In loving memory of Kimiko • Forever in our hearts</p>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
