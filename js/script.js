@@ -480,7 +480,6 @@ class SaraBirthdayAdventure {
                 if (currentPhotoIndex > 0) {
                     currentPhotoIndex--;
                     updatePhotoDisplay();
-                    this.playSound('chime');
                 }
             });
         }
@@ -491,7 +490,6 @@ class SaraBirthdayAdventure {
                 if (currentPhotoIndex < totalPhotos - 1) {
                     currentPhotoIndex++;
                     updatePhotoDisplay();
-                    this.playSound('chime');
                 }
             });
         }
@@ -501,7 +499,6 @@ class SaraBirthdayAdventure {
             photo.addEventListener('click', () => {
                 currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
                 updatePhotoDisplay();
-                this.playSound('chime');
                 this.showMessage('Beautiful memories of Sara! 📸✨', 'celebration');
             });
         });
@@ -512,11 +509,9 @@ class SaraBirthdayAdventure {
                 if (e.key === 'ArrowLeft' && currentPhotoIndex > 0) {
                     currentPhotoIndex--;
                     updatePhotoDisplay();
-                    this.playSound('chime');
                 } else if (e.key === 'ArrowRight' && currentPhotoIndex < totalPhotos - 1) {
                     currentPhotoIndex++;
                     updatePhotoDisplay();
-                    this.playSound('chime');
                 }
             }
         });
