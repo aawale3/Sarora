@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara's Birthday Adventure - A Celebration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeBtn" aria-label="Toggle theme">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </div>
+
+    <!-- Navigation System -->
+    <nav class="sanctuary-nav">
+        <div class="nav-container">
+            <button class="nav-btn active" data-area="entrance" aria-label="Party Entrance">
+                <span class="nav-icon">🎉</span>
+                <span class="nav-label">Party Entrance</span>
+            </button>
+            <button class="nav-btn" data-area="window-perch" aria-label="Cake Corner">
+                <span class="nav-icon">🎂</span>
+                <span class="nav-label">Cake Corner</span>
+            </button>
+            <button class="nav-btn" data-area="sunbeam" aria-label="Gift Treasure Spot">
+                <span class="nav-icon">🎁</span>
+                <span class="nav-label">Gift Treasure</span>
+            </button>
+            <button class="nav-btn" data-area="garden" aria-label="Birthday Wishes Garden">
+                <span class="nav-icon">🌸</span>
+                <span class="nav-label">Wishes Garden</span>
+            </button>
+            <button class="nav-btn" data-area="memory" aria-label="Birthday Memory Lane">
+                <span class="nav-icon">✨</span>
+                <span class="nav-label">Memory Lane</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="sanctuary">
+        <header class="sanctuary-header">
+            <h1>Sara's Birthday Adventure</h1>
+            <p class="subtitle">A joyful celebration of an amazing person</p>
+            <div class="header-controls">
+                <button id="memoryModeBtn" class="mode-btn" aria-label="Birthday Mode">
+                    <span>🎵</span> Birthday Mode
+                </button>
+            </div>
+        </header>
+
+        <div class="sanctuary-content">
+            <!-- Party Entrance Zone -->
+            <section class="zone entrance-zone active" data-area="entrance">
+                <h2>🎉 Party Entrance</h2>
+                <div class="zone-content">
+                    <div class="entrance-container">
+                        <div class="kimiko-container">
+                            <img src="assets/images/kimiko_sitting.png" 
+                                 alt="Kimiko sitting at the entrance" 
+                                 class="kimiko-sitting"
+                                 id="kimikoEntrance">
+                            <div class="paw-prints">
+                                <div class="paw-print paw-1">🐾</div>
+                                <div class="paw-print paw-2">🐾</div>
+                                <div class="paw-print paw-3">🐾</div>
+                            </div>
+                            <div class="welcome-bell">
+                                <span class="bell-icon">🎉</span>
+                                <div class="bell-sound">*party celebration*</div>
+                            </div>
+                            <div class="zoom-area entrance-zoom" data-zoom="entrance-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="entrance-details">
+                            <div class="welcome-message">
+                                <h3>Welcome to Sara's Birthday Adventure!</h3>
+                                <p>This is where Sara is greeted with love and celebration. Hover over the cat or ring the bell for a party surprise!</p>
+                            </div>
+                            <div class="entrance-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🐾</span>
+                                    <span>Party Paw Prints</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">💖</span>
+                                    <span>Birthday Joy</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🎉</span>
+                                    <span>Celebration Bell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cake Corner Zone -->
+            <section class="zone window-perch-zone" data-area="window-perch">
+                <h2>🎂 Cake Corner</h2>
+                <div class="zone-content">
+                    <div class="window-container">
+                        <div class="window-frame">
+                            <img src="assets/images/birthday_cake.png" 
+                                 alt="Birthday cake celebration" 
+                                 class="kimiko-window-perch"
+                                 id="kimikoWindowPerch">
+                            <div class="window-reflection"></div>
+                            <div class="window-sill"></div>
+
+                            <div class="zoom-area window-zoom" data-zoom="window-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="window-details">
+                            <div class="window-description">
+                                <h3>The Sweetest Spot 🍰</h3>
+                                <p>Sara makes life sweeter just like her favorite desserts. This is where we celebrate the sweetness she brings to our lives. Click to see the birthday magic!</p>
+                            </div>
+                            <div class="window-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🍰</span>
+                                    <span>Sweet Treats</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">✨</span>
+                                    <span>Birthday Magic</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🎂</span>
+                                    <span>Celebration Cake</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gift Treasure Spot Zone -->
+            <section class="zone sunbeam-zone" data-area="sunbeam">
+                <h2>🎁 Gift Treasure Spot</h2>
+                <div class="zone-content">
+                    <div class="sunbeam-container">
+                        <div class="sunbeam-area">
+                            <img src="assets/images/gift_box.png" 
+                                 alt="Gift treasure box" 
+                                 class="kimiko-sunbeam"
+                                 id="kimikoSunbeam">
+                            <div class="sunbeam-effect"></div>
+                            <div class="dust-particles"></div>
+
+                            <div class="zoom-area sunbeam-zoom" data-zoom="sunbeam-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="sunbeam-details">
+                            <div class="sunbeam-description">
+                                <h3>The Treasure of Friendship 🎁</h3>
+                                <p>Sara is the best gift to everyone around her – thoughtful, kind, and fun! This treasure spot celebrates the amazing person she is. Click to discover the friendship treasures!</p>
+                            </div>
+                            <div class="sunbeam-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🎁</span>
+                                    <span>Friendship Gifts</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">💖</span>
+                                    <span>Kind Heart</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">✨</span>
+                                    <span>Special Person</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Birthday Wishes Garden Zone -->
+            <section class="zone garden-zone" data-area="garden">
+                <h2>🌸 Birthday Wishes Garden</h2>
+                <div class="zone-content">
+                    <div class="garden-container">
+                        <div class="garden-area" id="gardenArea">
+
+                            <div class="garden-description">
+                                <h3>A Garden of Wishes 🌸</h3>
+                                <p>Place birthday wishes for Sara in this magical garden. Each wish celebrates the amazing person she is. Watch for sparkles that dance around her special place.</p>
+                            </div>
+                            <button class="flower-btn" id="placeFlowerBtn">
+                                🌟 Place a Wish
+                            </button>
+                            <div class="garden-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🌟</span>
+                                    <span>Birthday Wishes</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">💖</span>
+                                    <span>Love Blooms</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">✨</span>
+                                    <span>Sparkle Magic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Birthday Memory Lane Zone -->
+            <section class="zone memory-zone" data-area="memory">
+                <h2>✨ Birthday Memory Lane</h2>
+                <div class="zone-content">
+                    <div class="memory-container">
+                        <div class="candle-area">
+                            <img src="assets/images/candle_unlit.png" 
+                                 alt="Birthday Candle" 
+                                 class="candle"
+                                 id="candle">
+
+                            <div class="memory-description">
+                                <h3>Light Up the Birthday Memories ✨</h3>
+                                <p>Each candle is a reminder of how special Sara is to us. Light the birthday candle to celebrate her amazing spirit. Photos and memories surround this joyful place.</p>
+                            </div>
+                            <div class="zoom-area memory-zoom" data-zoom="memory-detail">
+                                <div class="zoom-hint">🔍 Click to explore</div>
+                            </div>
+                        </div>
+                        <div class="memory-features">
+                            <div class="feature">
+                                <span class="feature-icon">🕯️</span>
+                                <span>Birthday Candle</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🎂</span>
+                                <span>Birthday Joy</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">📸</span>
+                                <span>Happy Memories</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Zoom Overlays -->
+        <div class="zoom-overlay" id="zoomOverlay">
+            <div class="zoom-content">
+                <button class="zoom-close" id="zoomClose">✕</button>
+                
+                <!-- Party Entrance Detail Zoom -->
+                <div class="zoom-detail" id="entrance-detail">
+                    <div class="zoom-header">
+                        <h2>Sara's Grand Birthday Welcome 🎉</h2>
+                        <p>Her joyful celebration entrance</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <div class="sara-photos-gallery">
+                                <div class="photo-container">
+                                    <img src="assets/images/sara_1.jpg" alt="Sara in botanical setting" class="sara-photo active" id="saraPhoto1">
+                                    <img src="assets/images/sara_2.jpg" alt="Sara at elegant restaurant" class="sara-photo" id="saraPhoto2">
+                                    <img src="assets/images/sara_3.jpg" alt="Sara in museum with airplane" class="sara-photo" id="saraPhoto3">
+                                    <img src="assets/images/sara_4.jpg" alt="Sara in modern interior" class="sara-photo" id="saraPhoto4">
+                                    <img src="assets/images/sara_5.jpg" alt="Sara in garden setting" class="sara-photo" id="saraPhoto5">
+                                </div>
+                                <div class="photo-navigation">
+                                    <button class="photo-nav-btn" id="prevPhoto">←</button>
+                                    <span class="photo-counter">1 / 5</span>
+                                    <button class="photo-nav-btn" id="nextPhoto">→</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📸</span>
+                                <div class="detail-text">
+                                    <h4>Beautiful Memories</h4>
+                                    <p>Click through these photos to see Sara's radiant smile and joyful spirit in different beautiful settings.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎉</span>
+                                <div class="detail-text">
+                                    <h4>Birthday Celebration</h4>
+                                    <p>She has a special way of making every day feel like a party - spreading joy and laughter to everyone around her.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💖</span>
+                                <div class="detail-text">
+                                    <h4>Warm Welcome</h4>
+                                    <p>Every encounter with Sara is met with her bright smile and genuine kindness that lights up the room.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cake Corner Detail Zoom -->
+                <div class="zoom-detail" id="window-detail">
+                    <div class="zoom-header">
+                        <h2>The Sweetest Moments 🍰</h2>
+                        <p>Her favorite celebration spot</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <img src="assets/images/birthday_cake.png" alt="Birthday cake celebration">
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🍰</span>
+                                <div class="detail-text">
+                                    <h4>Sweet Treats</h4>
+                                    <p>Sara has a sweet tooth and an even sweeter personality, making every dessert taste better with her presence.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">✨</span>
+                                <div class="detail-text">
+                                    <h4>Birthday Magic</h4>
+                                    <p>She has a magical way of making every celebration special, turning ordinary moments into extraordinary memories.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div class="detail-text">
+                                    <h4>Celebration Cake</h4>
+                                    <p>Just like this beautiful cake, Sara brings sweetness and joy to every gathering and celebration.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gift Treasure Detail Zoom -->
+                <div class="zoom-detail" id="sunbeam-detail">
+                    <div class="zoom-header">
+                        <h2>Treasures of Friendship 🎁</h2>
+                        <p>Where kindness meets joy</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <img src="assets/images/gift_box.png" alt="Gift treasure box">
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎁</span>
+                                <div class="detail-text">
+                                    <h4>Friendship Gifts</h4>
+                                    <p>Sara is the ultimate gift giver, always thinking of others and bringing joy with her thoughtful gestures.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💖</span>
+                                <div class="detail-text">
+                                    <h4>Kind Heart</h4>
+                                    <p>Her kindness is like a treasure that never runs out, always ready to share love and support.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">✨</span>
+                                <div class="detail-text">
+                                    <h4>Special Person</h4>
+                                    <p>This treasure spot celebrates Sara's unique ability to make everyone feel special and valued.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birthday Memory Detail Zoom -->
+                <div class="zoom-detail" id="memory-detail">
+                    <div class="zoom-header">
+                        <h2>Forever in Our Hearts ✨ Happy Birthday Sara</h2>
+                        <p>A place of birthday celebration</p>
+                    </div>
+                    <div class="zoom-main">
+                        <div class="zoom-image">
+                            <div class="zoom-candle-container">
+                                <img src="assets/images/candle_unlit.png" alt="Birthday candle" id="zoomCandle" class="zoom-candle">
+                                <div class="zoom-candle-glow" id="zoomCandleGlow"></div>
+                                <div class="zoom-candle-hint">Click to light the birthday candle</div>
+                            </div>
+                        </div>
+                        <div class="zoom-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🕯️</span>
+                                <div class="detail-text">
+                                    <h4>Birthday Candle</h4>
+                                    <p>This special candle represents all the joy and light Sara brings to our lives. Click to light it and celebrate her amazing spirit!</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📸</span>
+                                <div class="detail-text">
+                                    <h4>Happy Memories</h4>
+                                    <p>Every photo tells a story of laughter, friendship, and the wonderful moments we've shared with Sara.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div class="detail-text">
+                                    <h4>Birthday Joy</h4>
+                                    <p>In this celebration corner, we honor Sara's special day and all the happiness she brings to everyone around her.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="sanctuary-footer">
+            <p>Made with 💖 to celebrate Sara • Happy Birthday 🎂✨</p>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
