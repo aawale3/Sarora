@@ -793,7 +793,7 @@ class SaraBirthdayAdventure {
         this.memoryModeInterval = setInterval(() => {
             this.navigateToArea(areas[currentIndex]);
             currentIndex = (currentIndex + 1) % areas.length;
-        }, 8000); // Change area every 8 seconds
+        }, 30000); // Change area every 30 seconds
     }
 
     stopMemoryMode() {
