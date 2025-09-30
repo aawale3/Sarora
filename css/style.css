@@ -1591,6 +1591,20 @@ img:focus {
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    text-align: center;
+}
+
+.unlock-form h4 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.unlock-form p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
 }
 
 .unlock-form input {

@@ -1155,9 +1155,11 @@ function unlockEvent(eventNumber) {
         const content = document.getElementById(`event${eventNumber}Content`);
         const revealed = document.getElementById(`event${eventNumber}Revealed`);
         const status = document.getElementById(`event${eventNumber}Status`);
+        const header = document.getElementById(`event${eventNumber}Header`);
         
         if (content) content.style.display = 'none';
         if (revealed) revealed.style.display = 'block';
+        if (header) header.style.display = 'flex';
         if (status) {
             status.textContent = '✅ Unlocked';
             status.classList.add('unlocked');
