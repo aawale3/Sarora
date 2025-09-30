@@ -48,6 +48,9 @@
             <h1>Sara's Birthday Adventure</h1>
             <p class="subtitle">A joyful celebration of an amazing person</p>
             <div class="header-controls">
+                <button id="adventureBtn" class="adventure-btn" aria-label="Start Your Adventure">
+                    <span>🎉</span> Start Your Adventure
+                </button>
                 <button id="memoryModeBtn" class="mode-btn" aria-label="Birthday Mode">
                     <span>🎵</span> Birthday Mode
                 </button>
@@ -275,10 +278,12 @@
                                     <img src="assets/images/sara_3.jpg" alt="Sara in museum with airplane" class="sara-photo" id="saraPhoto3">
                                     <img src="assets/images/sara_4.jpg" alt="Sara in modern interior" class="sara-photo" id="saraPhoto4">
                                     <img src="assets/images/sara_5.jpg" alt="Sara in garden setting" class="sara-photo" id="saraPhoto5">
+                                    <img src="assets/images/sara_6.jpg" alt="Sara in garden setting" class="sara-photo" id="saraPhoto6">
+
                                 </div>
                                 <div class="photo-navigation">
                                     <button class="photo-nav-btn" id="prevPhoto">←</button>
-                                    <span class="photo-counter">1 / 5</span>
+                                    <span class="photo-counter">1 / 6</span>
                                     <button class="photo-nav-btn" id="nextPhoto">→</button>
                                 </div>
                             </div>
@@ -415,6 +420,115 @@
                                 <div class="detail-text">
                                     <h4>Birthday Joy</h4>
                                     <p>In this celebration corner, we honor Sara's special day and all the happiness she brings to everyone around her.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday Scavenger Hunt Overlay -->
+        <div class="scavenger-overlay" id="scavengerOverlay">
+            <div class="scavenger-content">
+                <button class="scavenger-close" id="scavengerClose">✕</button>
+                
+                <div class="scavenger-header">
+                    <h2>🎉 Birthday Scavenger Hunt</h2>
+                    <p>Unlock Sara's surprise birthday events!</p>
+                </div>
+
+                <div class="scavenger-events">
+                    <!-- Event 1: Ulta Beauty -->
+                    <div class="event-card" id="event1">
+                        <div class="event-header">
+                            <h3>Event 1: Ulta Beauty @ Superstition Springs Center</h3>
+                            <div class="event-status" id="event1Status">🔒 Locked</div>
+                        </div>
+                        <div class="event-content" id="event1Content">
+                            <div class="unlock-form">
+                                <input type="text" id="event1Input" placeholder="Enter unlock code..." maxlength="4">
+                                <button onclick="unlockEvent(1)">Unlock</button>
+                            </div>
+                        </div>
+                        <div class="event-revealed" id="event1Revealed" style="display: none;">
+                            <div class="gift-card">
+                                <img src="assets/images/ulta_giftcard.png" alt="Ulta Gift Card" class="gift-card-image">
+                                <p class="hint">💡 Hint: Something sweet is waiting to rise in the oven…</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: Baking Event -->
+                    <div class="event-card" id="event2">
+                        <div class="event-header">
+                            <h3>Event 2: Surprise Baking Event @ Her House</h3>
+                            <div class="event-status" id="event2Status">🔒 Locked</div>
+                        </div>
+                        <div class="event-content" id="event2Content">
+                            <div class="unlock-form">
+                                <p class="question">Where was our first couples trip?</p>
+                                <input type="text" id="event2Input" placeholder="Enter your answer...">
+                                <button onclick="unlockEvent(2)">Answer</button>
+                            </div>
+                        </div>
+                        <div class="event-revealed" id="event2Revealed" style="display: none;">
+                            <div class="baking-details">
+                                <h4>🍰 Baking Event Details</h4>
+                                <p>Get ready for a sweet surprise! We'll be baking something special together.</p>
+                                <p class="hint">💐 Cute Hint: Your favorite flowers — hydrangeas — will guide you here.</p>
+                                <div class="secondary-unlock">
+                                    <input type="text" id="event2SecondaryInput" placeholder="Enter secondary code..." maxlength="4">
+                                    <button onclick="unlockSecondary(2)">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3: iFLY Skydiving -->
+                    <div class="event-card" id="event3">
+                        <div class="event-header">
+                            <h3>Event 3: Friday @ 4PM – Indoor Skydiving at iFLY</h3>
+                            <div class="event-status" id="event3Status">🔒 Locked</div>
+                        </div>
+                        <div class="event-content" id="event3Content">
+                            <div class="unlock-form">
+                                <p class="warning">⚠️ Warning: You might lose your hairdo in this one 💨😂</p>
+                                <input type="text" id="event3Input" placeholder="Enter code..." maxlength="4">
+                                <button onclick="unlockEvent(3)">Unlock</button>
+                            </div>
+                        </div>
+                        <div class="event-revealed" id="event3Revealed" style="display: none;">
+                            <div class="skydiving-details">
+                                <h4>🪂 iFLY Indoor Skydiving</h4>
+                                <p>Friday at 4:00 PM - Get ready to fly!</p>
+                                <p>Location: iFLY Indoor Skydiving</p>
+                                <div class="secondary-unlock">
+                                    <input type="text" id="event3SecondaryInput" placeholder="Enter secondary code..." maxlength="4">
+                                    <button onclick="unlockSecondary(3)">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4: Final Dinner -->
+                    <div class="event-card" id="event4">
+                        <div class="event-header">
+                            <h3>Event 4: Final Dinner Surprise</h3>
+                            <div class="event-status" id="event4Status">🔒 Locked</div>
+                        </div>
+                        <div class="event-content" id="event4Content">
+                            <div class="unlock-form">
+                                <input type="text" id="event4Input" placeholder="Enter code..." maxlength="4">
+                                <button onclick="unlockEvent(4)">Unlock</button>
+                            </div>
+                        </div>
+                        <div class="event-revealed" id="event4Revealed" style="display: none;">
+                            <div class="dinner-details">
+                                <h4>🍽️ Final Dinner Celebration</h4>
+                                <p>Reservation details and final celebration message will be revealed here!</p>
+                                <div class="photo-collage">
+                                    <p>💕 A heartfelt message and photo collage will appear here!</p>
                                 </div>
                             </div>
                         </div>

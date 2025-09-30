@@ -34,6 +34,7 @@ class SaraBirthdayAdventure {
         this.setupZones();
         this.setupMemoryMode();
         this.setupZoomInteractions();
+        this.setupScavengerHunt();
         this.loadAudio();
         this.startMemoryModeTimer();
         
@@ -520,6 +521,101 @@ class SaraBirthdayAdventure {
         updatePhotoDisplay();
         
         console.log('Photo gallery setup complete');
+    }
+    
+    // Scavenger Hunt Setup
+    setupScavengerHunt() {
+        const adventureBtn = document.getElementById('adventureBtn');
+        const scavengerOverlay = document.getElementById('scavengerOverlay');
+        const scavengerClose = document.getElementById('scavengerClose');
+        
+        // Initialize scavenger hunt state
+        this.scavengerState = {
+            event1: false,
+            event2: false,
+            event2Step1: false,
+            event2Step2: false,
+            event3: false,
+            event3Step1: false,
+            event3Step2: false,
+            event4: false
+        };
+        
+        // Open scavenger hunt
+        if (adventureBtn) {
+            adventureBtn.addEventListener('click', () => {
+                this.openScavengerHunt();
+            });
+        }
+        
+        // Close scavenger hunt
+        if (scavengerClose) {
+            scavengerClose.addEventListener('click', () => {
+                this.closeScavengerHunt();
+            });
+        }
+        
+        // Close on overlay click
+        if (scavengerOverlay) {
+            scavengerOverlay.addEventListener('click', (e) => {
+                if (e.target === scavengerOverlay) {
+                    this.closeScavengerHunt();
+                }
+            });
+        }
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && scavengerOverlay && scavengerOverlay.classList.contains('active')) {
+                this.closeScavengerHunt();
+            }
+        });
+        
+        // Initialize event visibility
+        this.updateEventVisibility();
+        
+        console.log('Scavenger hunt setup complete');
+    }
+    
+    openScavengerHunt() {
+        const scavengerOverlay = document.getElementById('scavengerOverlay');
+        if (scavengerOverlay) {
+            scavengerOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            this.playSound('chime');
+            this.showMessage('Welcome to Sara\'s Birthday Scavenger Hunt! 🎉', 'celebration');
+        }
+    }
+    
+    closeScavengerHunt() {
+        const scavengerOverlay = document.getElementById('scavengerOverlay');
+        if (scavengerOverlay) {
+            scavengerOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            this.playSound('chime');
+        }
+    }
+    
+    updateEventVisibility() {
+        // Show/hide events based on unlock state
+        for (let i = 1; i <= 4; i++) {
+            const eventCard = document.getElementById(`event${i}`);
+            if (eventCard) {
+                if (i === 1) {
+                    // Event 1 is always visible
+                    eventCard.style.display = 'block';
+                } else if (i === 2) {
+                    // Event 2 visible after Event 1
+                    eventCard.style.display = this.scavengerState.event1 ? 'block' : 'none';
+                } else if (i === 3) {
+                    // Event 3 visible after Event 2 step 2
+                    eventCard.style.display = this.scavengerState.event2Step2 ? 'block' : 'none';
+                } else if (i === 4) {
+                    // Event 4 visible after Event 3 step 2
+                    eventCard.style.display = this.scavengerState.event3Step2 ? 'block' : 'none';
+                }
+            }
+        }
     }
 
     // Audio Management
@@ -1022,14 +1118,100 @@ animationStyles.textContent = `
 `;
 document.head.appendChild(animationStyles);
 
+// Global functions for scavenger hunt (called from HTML)
+function unlockEvent(eventNumber) {
+    const adventure = window.saraAdventure;
+    if (!adventure) return;
+    
+    const input = document.getElementById(`event${eventNumber}Input`);
+    const inputValue = input.value.trim();
+    
+    let isCorrect = false;
+    
+    switch (eventNumber) {
+        case 1:
+            isCorrect = inputValue === '7197';
+            break;
+        case 2:
+            isCorrect = inputValue.toLowerCase() === 'new york';
+            break;
+        case 3:
+            isCorrect = inputValue === '1111';
+            break;
+        case 4:
+            isCorrect = inputValue === '1111';
+            break;
+    }
+    
+    if (isCorrect) {
+        adventure.scavengerState[`event${eventNumber}`] = true;
+        if (eventNumber === 2) {
+            adventure.scavengerState.event2Step1 = true;
+        } else if (eventNumber === 3) {
+            adventure.scavengerState.event3Step1 = true;
+        }
+        
+        // Show revealed content
+        const content = document.getElementById(`event${eventNumber}Content`);
+        const revealed = document.getElementById(`event${eventNumber}Revealed`);
+        const status = document.getElementById(`event${eventNumber}Status`);
+        
+        if (content) content.style.display = 'none';
+        if (revealed) revealed.style.display = 'block';
+        if (status) {
+            status.textContent = '✅ Unlocked';
+            status.classList.add('unlocked');
+        }
+        
+        adventure.playSound('chime');
+        adventure.showMessage('Event unlocked! 🎉', 'celebration');
+        adventure.updateEventVisibility();
+        
+        // Clear input
+        input.value = '';
+    } else {
+        adventure.showMessage('Try again, birthday detective 😉', 'info');
+        input.value = '';
+        input.focus();
+    }
+}
+
+function unlockSecondary(eventNumber) {
+    const adventure = window.saraAdventure;
+    if (!adventure) return;
+    
+    const input = document.getElementById(`event${eventNumber}SecondaryInput`);
+    const inputValue = input.value.trim();
+    
+    if (inputValue === '1111') {
+        adventure.scavengerState[`event${eventNumber}Step2`] = true;
+        
+        // Hide secondary unlock form
+        const secondaryUnlock = input.closest('.secondary-unlock');
+        if (secondaryUnlock) {
+            secondaryUnlock.style.display = 'none';
+        }
+        
+        adventure.playSound('chime');
+        adventure.showMessage('Final step unlocked! 🎉', 'celebration');
+        adventure.updateEventVisibility();
+        
+        // Clear input
+        input.value = '';
+    } else {
+        adventure.showMessage('Try again, birthday detective 😉', 'info');
+        input.value = '';
+        input.focus();
+    }
+}
+
 // Initialize the birthday adventure when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new SaraBirthdayAdventure();
+    window.saraAdventure = new SaraBirthdayAdventure();
     
     // Trigger confetti on page load
     setTimeout(() => {
-        const adventure = new SaraBirthdayAdventure();
-        adventure.triggerConfetti();
+        window.saraAdventure.triggerConfetti();
     }, 1000);
 });
 
