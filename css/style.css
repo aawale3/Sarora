@@ -1537,6 +1537,65 @@ img:focus {
     color: var(--text-secondary);
 }
 
+/* Photo Upload Section */
+.photo-upload-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+}
+
+.photo-upload-section h4 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.photo-upload-section p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+}
+
+.upload-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.upload-btn {
+    background: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    background: var(--wood);
+    transform: translateY(-1px);
+}
+
+.upload-status {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.upload-status.success {
+    color: #4caf50;
+}
+
+.upload-status.error {
+    color: #f44336;
+}
+
 /* Event Cards */
 .scavenger-events {
     display: flex;

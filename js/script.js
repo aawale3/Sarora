@@ -574,6 +574,9 @@ class SaraBirthdayAdventure {
         // Initialize event visibility
         this.updateEventVisibility();
         
+        // Setup photo upload
+        this.setupPhotoUpload();
+        
         console.log('Scavenger hunt setup complete');
     }
     
@@ -614,6 +617,69 @@ class SaraBirthdayAdventure {
                     // Event 4 visible after Event 3 step 2
                     eventCard.style.display = this.scavengerState.event3Step2 ? 'block' : 'none';
                 }
+            }
+        }
+    }
+    
+    // Photo Upload Setup
+    setupPhotoUpload() {
+        const ultaPhotoUpload = document.getElementById('ultaPhotoUpload');
+        const ultaUploadStatus = document.getElementById('ultaUploadStatus');
+        
+        if (ultaPhotoUpload) {
+            ultaPhotoUpload.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    this.handlePhotoUpload(file, 'ulta', ultaUploadStatus);
+                }
+            });
+        }
+    }
+    
+    handlePhotoUpload(file, type, statusElement) {
+        // Validate file type
+        if (!file.type.startsWith('image/')) {
+            statusElement.textContent = 'Please select an image file';
+            statusElement.className = 'upload-status error';
+            return;
+        }
+        
+        // Validate file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            statusElement.textContent = 'File too large (max 5MB)';
+            statusElement.className = 'upload-status error';
+            return;
+        }
+        
+        // Create FileReader to convert to base64
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const base64Image = e.target.result;
+            
+            // Store the image data
+            if (type === 'ulta') {
+                this.ultaGiftCardImage = base64Image;
+                statusElement.textContent = 'Ulta gift card photo uploaded successfully!';
+                statusElement.className = 'upload-status success';
+                
+                // Update the image in the revealed content if it's already unlocked
+                this.updateRevealedImage('ulta');
+            }
+        };
+        
+        reader.onerror = () => {
+            statusElement.textContent = 'Error uploading file';
+            statusElement.className = 'upload-status error';
+        };
+        
+        reader.readAsDataURL(file);
+    }
+    
+    updateRevealedImage(type) {
+        if (type === 'ulta' && this.ultaGiftCardImage) {
+            const ultaImage = document.querySelector('#event1Revealed .gift-card-image');
+            if (ultaImage) {
+                ultaImage.src = this.ultaGiftCardImage;
             }
         }
     }
@@ -1168,6 +1234,11 @@ function unlockEvent(eventNumber) {
         adventure.playSound('chime');
         adventure.showMessage('Event unlocked! 🎉', 'celebration');
         adventure.updateEventVisibility();
+        
+        // Update image if uploaded
+        if (eventNumber === 1 && adventure.ultaGiftCardImage) {
+            adventure.updateRevealedImage('ulta');
+        }
         
         // Clear input
         input.value = '';
