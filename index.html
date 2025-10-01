@@ -449,9 +449,9 @@
                             <div class="unlock-form">
                                 <h4>🔍 Mystery Event #1</h4>
                                 <p class="location-instruction">📍 Tempe Market Place</p>
-                                <p class="question">What pink treat do you remember from Miami?</p>
-                                <input type="text" id="event1Input" placeholder="Enter your answer...">
-                                <button onclick="unlockEvent(1)">Answer</button>
+                                <p>Enter the unlock code to reveal this surprise:</p>
+                                <input type="text" id="event1Input" placeholder="Enter unlock code..." maxlength="4">
+                                <button onclick="unlockEvent(1)">Unlock</button>
                             </div>
                         </div>
                         <div class="event-revealed" id="event1Revealed" style="display: none;">
@@ -459,10 +459,6 @@
                                 <h4>🧼 Soap des Jour Details</h4>
                                 <p>Time for some pampering! We'll be visiting Soap des Jour for some luxurious treats.</p>
                                 <p class="hint">💐 Cute Hint: Your favorite flowers — hydrangeas — will guide you here.</p>
-                                <div class="secondary-unlock" id="event1Secondary">
-                                    <input type="text" id="event1SecondaryInput" placeholder="Enter secondary code..." maxlength="8">
-                                    <button onclick="unlockSecondary(1)">Continue</button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -477,9 +473,9 @@
                             <div class="unlock-form">
                                 <h4>🔍 Mystery Event #2</h4>
                                 <p class="location-instruction">📍 Drive to Superstition Springs Center</p>
-                                <p>Enter the unlock code to reveal this surprise:</p>
-                                <input type="text" id="event2Input" placeholder="Enter unlock code..." maxlength="4">
-                                <button onclick="unlockEvent(2)">Unlock</button>
+                                <p class="question">What pink treat do you remember from Miami?</p>
+                                <input type="text" id="event2Input" placeholder="Enter your answer...">
+                                <button onclick="unlockEvent(2)">Answer</button>
                             </div>
                         </div>
                         <div class="event-revealed" id="event2Revealed" style="display: none;">
@@ -492,6 +488,10 @@
                                     </div>
                                 </a>
                                 <p class="hint">💡 Hint: Something sweet is waiting to rise in the oven…</p>
+                                <div class="secondary-unlock" id="event2Secondary">
+                                    <input type="text" id="event2SecondaryInput" placeholder="Enter secondary code..." maxlength="8">
+                                    <button onclick="unlockSecondary(2)">Continue</button>
+                                </div>
                             </div>
                         </div>
                     </div>
