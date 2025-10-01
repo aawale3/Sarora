@@ -1203,12 +1203,19 @@ document.head.appendChild(animationStyles);
 
 // Global functions for scavenger hunt (called from HTML)
 function arriveAtLocation(eventNumber) {
+    console.log('arriveAtLocation called for event:', eventNumber);
     const adventure = window.saraAdventure;
-    if (!adventure) return;
+    if (!adventure) {
+        console.log('Adventure not found');
+        return;
+    }
     
     // Hide arrival buttons and show question
     const arrivalButtons = document.getElementById(`event${eventNumber}ArrivalButtons`);
     const questionSection = document.getElementById(`event${eventNumber}QuestionSection`);
+    
+    console.log('arrivalButtons:', arrivalButtons);
+    console.log('questionSection:', questionSection);
     
     if (arrivalButtons) arrivalButtons.style.display = 'none';
     if (questionSection) questionSection.style.display = 'block';
@@ -1218,8 +1225,12 @@ function arriveAtLocation(eventNumber) {
 }
 
 function notArriveAtLocation(eventNumber) {
+    console.log('notArriveAtLocation called for event:', eventNumber);
     const adventure = window.saraAdventure;
-    if (!adventure) return;
+    if (!adventure) {
+        console.log('Adventure not found');
+        return;
+    }
     
     const funnyMessages = [
         'Well hurry up! The gift card is getting lonely! 🏃‍♀️💨',
@@ -1233,6 +1244,7 @@ function notArriveAtLocation(eventNumber) {
     ];
     
     const randomMessage = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+    console.log('Showing message:', randomMessage);
     adventure.showMessage(randomMessage, 'info');
     adventure.playSound('chime');
 }

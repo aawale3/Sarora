@@ -1765,9 +1765,10 @@ img:focus {
 
 .arrival-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     margin: 1.5rem 0;
+    flex-wrap: wrap;
 }
 
 .arrive-btn, .not-arrive-btn {
