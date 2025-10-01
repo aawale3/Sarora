@@ -1271,9 +1271,15 @@ function unlockSecondary(eventNumber) {
         adventure.scavengerState[`event${eventNumber}Step2`] = true;
         
         // Hide secondary unlock form
-        const secondaryUnlock = input.closest('.secondary-unlock');
+        const secondaryUnlock = document.getElementById(`event${eventNumber}Secondary`);
         if (secondaryUnlock) {
             secondaryUnlock.style.display = 'none';
+        }
+        
+        // Show next event button
+        const nextBtn = document.getElementById(`event${eventNumber}NextBtn`);
+        if (nextBtn) {
+            nextBtn.style.display = 'block';
         }
         
         adventure.playSound('chime');
@@ -1286,6 +1292,19 @@ function unlockSecondary(eventNumber) {
         adventure.showMessage('Try again, birthday detective 😉', 'info');
         input.value = '';
         input.focus();
+    }
+}
+
+function showNextEvent(eventNumber) {
+    const adventure = window.saraAdventure;
+    if (!adventure) return;
+    
+    // Scroll to the next event card
+    const nextEvent = document.getElementById(`event${eventNumber}`);
+    if (nextEvent) {
+        nextEvent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        adventure.playSound('chime');
+        adventure.showMessage('Ready for the next adventure! 🎉', 'celebration');
     }
 }
 

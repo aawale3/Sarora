@@ -436,17 +436,6 @@
                 <div class="scavenger-header">
                     <h2>🎉 Birthday Scavenger Hunt</h2>
                     <p>Unlock Sara's surprise birthday events!</p>
-                    <div class="photo-upload-section">
-                        <h4>📸 Upload Hidden Photos</h4>
-                        <p>Add surprise images that will be revealed when events are unlocked:</p>
-                        <div class="upload-controls">
-                            <input type="file" id="ultaPhotoUpload" accept="image/*" style="display: none;">
-                            <button onclick="document.getElementById('ultaPhotoUpload').click()" class="upload-btn">
-                                📷 Upload Ulta Gift Card Photo
-                            </button>
-                            <span id="ultaUploadStatus" class="upload-status"></span>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="scavenger-events">
@@ -468,8 +457,14 @@
                         <div class="event-revealed" id="event1Revealed" style="display: none;">
                             <div class="gift-card">
                                 <h4>🎁 Ulta Beauty @ Superstition Springs Center</h4>
-                                <img src="assets/images/ulta_giftcard.png" alt="Ulta Gift Card" class="gift-card-image">
+                                <a href="https://eGft.in/JI7NDM9jsbMGltP" target="_blank" class="gift-card-link">
+                                    <div class="gift-card-box">
+                                        <img src="assets/images/ulta_giftcard.png" alt="Ulta Gift Card" class="gift-card-image">
+                                        <p class="gift-card-text">🎁 Click here to view your Ulta Gift Card!</p>
+                                    </div>
+                                </a>
                                 <p class="hint">💡 Hint: Something sweet is waiting to rise in the oven…</p>
+                                <button class="next-event-btn" onclick="showNextEvent(2)">Next Event →</button>
                             </div>
                         </div>
                     </div>
@@ -494,10 +489,11 @@
                                 <h4>🍰 Baking Event Details</h4>
                                 <p>Get ready for a sweet surprise! We'll be baking something special together.</p>
                                 <p class="hint">💐 Cute Hint: Your favorite flowers — hydrangeas — will guide you here.</p>
-                                <div class="secondary-unlock">
+                                <div class="secondary-unlock" id="event2Secondary">
                                     <input type="text" id="event2SecondaryInput" placeholder="Enter secondary code..." maxlength="4">
                                     <button onclick="unlockSecondary(2)">Continue</button>
                                 </div>
+                                <button class="next-event-btn" id="event2NextBtn" style="display: none;" onclick="showNextEvent(3)">Next Event →</button>
                             </div>
                         </div>
                     </div>
@@ -522,10 +518,11 @@
                                 <h4>🪂 iFLY Indoor Skydiving</h4>
                                 <p>Friday at 4:00 PM - Get ready to fly!</p>
                                 <p>Location: iFLY Indoor Skydiving</p>
-                                <div class="secondary-unlock">
+                                <div class="secondary-unlock" id="event3Secondary">
                                     <input type="text" id="event3SecondaryInput" placeholder="Enter secondary code..." maxlength="4">
                                     <button onclick="unlockSecondary(3)">Continue</button>
                                 </div>
+                                <button class="next-event-btn" id="event3NextBtn" style="display: none;" onclick="showNextEvent(4)">Next Event →</button>
                             </div>
                         </div>
                     </div>
