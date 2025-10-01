@@ -692,7 +692,8 @@ class SaraBirthdayAdventure {
             chime: new Audio('assets/audio/chime.mp3'),
             birds: new Audio('assets/audio/birds_chirping.mp3'),
             stretch: new Audio('assets/audio/cat_stretch.mp3'),
-            memory: new Audio('assets/audio/memory_music.mp3')
+            memory: new Audio('assets/audio/memory_music.mp3'),
+            giveon: new Audio('assets/audio/giveon-for-tonight-official-music-video-128-ytshorts.savetube.me.mp3')
         };
         
         // Set volume levels
@@ -701,6 +702,10 @@ class SaraBirthdayAdventure {
         this.audioFiles.birds.volume = 0.4;
         this.audioFiles.stretch.volume = 0.4;
         this.audioFiles.memory.volume = 0.3;
+        this.audioFiles.giveon.volume = 0.5;
+        
+        // Enable looping for Giveon song
+        this.audioFiles.giveon.loop = true;
         
         // Handle audio loading errors gracefully
         Object.values(this.audioFiles).forEach(audio => {
@@ -945,7 +950,8 @@ class SaraBirthdayAdventure {
     }
 
     startMemoryMode() {
-        this.playSound('memory');
+        // Play Giveon song instead of memory music
+        this.playSound('giveon');
         this.showMessage('Birthday mode activated - celebration tour begins! 🎉', 'celebration');
         
         // Auto-navigate through areas
@@ -961,6 +967,11 @@ class SaraBirthdayAdventure {
     stopMemoryMode() {
         if (this.memoryModeInterval) {
             clearInterval(this.memoryModeInterval);
+        }
+        // Stop Giveon song when birthday mode is paused
+        if (this.audioFiles && this.audioFiles.giveon) {
+            this.audioFiles.giveon.pause();
+            this.audioFiles.giveon.currentTime = 0;
         }
         this.showMessage('Birthday mode paused', 'info');
     }
