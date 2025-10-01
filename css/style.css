@@ -1893,6 +1893,18 @@ img:focus {
     text-align: center;
 }
 
+.photo-request {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff6b6b;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 107, 107, 0.3);
+}
+
 .question {
     font-size: 1.2rem;
     font-weight: 600;
