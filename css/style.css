@@ -1812,6 +1812,87 @@ img:focus {
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+.heartfelt-message {
+    background: linear-gradient(135deg, rgba(255, 192, 203, 0.1), rgba(255, 182, 193, 0.1));
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.heartfelt-message h3 {
+    color: #ff6b6b;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heartfelt-message p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    color: var(--text-primary);
+}
+
+.travel-memories {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.travel-memories h4 {
+    color: #ff6b6b;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.travel-memories ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.travel-memories li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+}
+
+.travel-memories li:last-child {
+    border-bottom: none;
+}
+
+.travel-memories strong {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.adventure-instructions {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.adventure-instructions h4 {
+    color: #ffa500;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.adventure-instructions p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    text-align: center;
+}
+
 .question {
     font-size: 1.2rem;
     font-weight: 600;
