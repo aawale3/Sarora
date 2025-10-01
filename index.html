@@ -473,9 +473,15 @@
                             <div class="unlock-form">
                                 <h4>🔍 Mystery Event #2</h4>
                                 <p class="location-instruction">📍 Drive to 857 E Baseline Rd Gilbert AZ 85233</p>
-                                <p class="question">What pink treat do you remember from Miami?</p>
-                                <input type="text" id="event2Input" placeholder="Enter your answer...">
-                                <button onclick="unlockEvent(2)">Answer</button>
+                                <div class="arrival-buttons" id="event2ArrivalButtons">
+                                    <button onclick="arriveAtLocation(2)" class="arrive-btn">🚗 I've Arrived!</button>
+                                    <button onclick="notArriveAtLocation(2)" class="not-arrive-btn">⏰ Not Yet...</button>
+                                </div>
+                                <div class="question-section" id="event2QuestionSection" style="display: none;">
+                                    <p class="question">What pink treat do you remember from Miami?</p>
+                                    <input type="text" id="event2Input" placeholder="Enter your answer...">
+                                    <button onclick="unlockEvent(2)">Answer</button>
+                                </div>
                             </div>
                         </div>
                         <div class="event-revealed" id="event2Revealed" style="display: none;">

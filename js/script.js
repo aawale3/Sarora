@@ -1202,6 +1202,41 @@ animationStyles.textContent = `
 document.head.appendChild(animationStyles);
 
 // Global functions for scavenger hunt (called from HTML)
+function arriveAtLocation(eventNumber) {
+    const adventure = window.saraAdventure;
+    if (!adventure) return;
+    
+    // Hide arrival buttons and show question
+    const arrivalButtons = document.getElementById(`event${eventNumber}ArrivalButtons`);
+    const questionSection = document.getElementById(`event${eventNumber}QuestionSection`);
+    
+    if (arrivalButtons) arrivalButtons.style.display = 'none';
+    if (questionSection) questionSection.style.display = 'block';
+    
+    adventure.playSound('chime');
+    adventure.showMessage('Great! Now for the question... 🤔', 'info');
+}
+
+function notArriveAtLocation(eventNumber) {
+    const adventure = window.saraAdventure;
+    if (!adventure) return;
+    
+    const funnyMessages = [
+        'Well hurry up! The gift card is getting lonely! 🏃‍♀️💨',
+        'Time\'s ticking! Your beauty products are waiting! ⏰💄',
+        'Chop chop! The Ulta staff is getting suspicious! 👀',
+        'Move those feet! Your surprise is getting impatient! 🎁😤',
+        'Speed it up! The birthday magic is fading! ✨🏃‍♀️',
+        'Come on! Even snails move faster than this! 🐌💨',
+        'Hurry up! The gift card is about to expire! ⏰💳',
+        'Move it! Your birthday adventure awaits! 🎂🚀'
+    ];
+    
+    const randomMessage = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+    adventure.showMessage(randomMessage, 'info');
+    adventure.playSound('chime');
+}
+
 function unlockEvent(eventNumber) {
     const adventure = window.saraAdventure;
     if (!adventure) return;
