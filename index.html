@@ -439,22 +439,50 @@
                 </div>
 
                 <div class="scavenger-events">
-                    <!-- Event 1: Ulta Beauty -->
+                    <!-- Event 1: Soap des Jour -->
                     <div class="event-card" id="event1">
                         <div class="event-header" id="event1Header" style="display: none;">
-                            <h3>Event 1: Ulta Beauty @ Superstition Springs Center</h3>
+                            <h3>Event 1: Soap des Jour @ Tempe Market Place</h3>
                             <div class="event-status" id="event1Status">🔒 Locked</div>
                         </div>
                         <div class="event-content" id="event1Content">
                             <div class="unlock-form">
                                 <h4>🔍 Mystery Event #1</h4>
-                                <p class="location-instruction">📍 Drive to Superstition Springs Center</p>
-                                <p>Enter the unlock code to reveal this surprise:</p>
-                                <input type="text" id="event1Input" placeholder="Enter unlock code..." maxlength="4">
-                                <button onclick="unlockEvent(1)">Unlock</button>
+                                <p class="location-instruction">📍 Tempe Market Place</p>
+                                <p class="question">What pink treat do you remember from Miami?</p>
+                                <input type="text" id="event1Input" placeholder="Enter your answer...">
+                                <button onclick="unlockEvent(1)">Answer</button>
                             </div>
                         </div>
                         <div class="event-revealed" id="event1Revealed" style="display: none;">
+                            <div class="soap-details">
+                                <h4>🧼 Soap des Jour Details</h4>
+                                <p>Time for some pampering! We'll be visiting Soap des Jour for some luxurious treats.</p>
+                                <p class="hint">💐 Cute Hint: Your favorite flowers — hydrangeas — will guide you here.</p>
+                                <div class="secondary-unlock" id="event1Secondary">
+                                    <input type="text" id="event1SecondaryInput" placeholder="Enter secondary code..." maxlength="7">
+                                    <button onclick="unlockSecondary(1)">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: Ulta Beauty -->
+                    <div class="event-card" id="event2">
+                        <div class="event-header" id="event2Header" style="display: none;">
+                            <h3>Event 2: Ulta Beauty @ Superstition Springs Center</h3>
+                            <div class="event-status" id="event2Status">🔒 Locked</div>
+                        </div>
+                        <div class="event-content" id="event2Content">
+                            <div class="unlock-form">
+                                <h4>🔍 Mystery Event #2</h4>
+                                <p class="location-instruction">📍 Drive to Superstition Springs Center</p>
+                                <p>Enter the unlock code to reveal this surprise:</p>
+                                <input type="text" id="event2Input" placeholder="Enter unlock code..." maxlength="4">
+                                <button onclick="unlockEvent(2)">Unlock</button>
+                            </div>
+                        </div>
+                        <div class="event-revealed" id="event2Revealed" style="display: none;">
                             <div class="gift-card">
                                 <h4>🎁 Ulta Beauty @ Superstition Springs Center</h4>
                                 <a href="https://eGft.in/JI7NDM9jsbMGltP" target="_blank" class="gift-card-link">
@@ -464,34 +492,6 @@
                                     </div>
                                 </a>
                                 <p class="hint">💡 Hint: Something sweet is waiting to rise in the oven…</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Event 2: Soap des Jour -->
-                    <div class="event-card" id="event2">
-                        <div class="event-header" id="event2Header" style="display: none;">
-                            <h3>Event 2: Soap des Jour @ Tempe Market Place</h3>
-                            <div class="event-status" id="event2Status">🔒 Locked</div>
-                        </div>
-                        <div class="event-content" id="event2Content">
-                            <div class="unlock-form">
-                                <h4>🔍 Mystery Event #2</h4>
-                                <p class="location-instruction">📍 Tempe Market Place</p>
-                                <p class="question">What pink treat do you remember from Miami?</p>
-                                <input type="text" id="event2Input" placeholder="Enter your answer...">
-                                <button onclick="unlockEvent(2)">Answer</button>
-                            </div>
-                        </div>
-                        <div class="event-revealed" id="event2Revealed" style="display: none;">
-                            <div class="soap-details">
-                                <h4>🧼 Soap des Jour Details</h4>
-                                <p>Time for some pampering! We'll be visiting Soap des Jour for some luxurious treats.</p>
-                                <p class="hint">💐 Cute Hint: Your favorite flowers — hydrangeas — will guide you here.</p>
-                                <div class="secondary-unlock" id="event2Secondary">
-                                    <input type="text" id="event2SecondaryInput" placeholder="Enter secondary code..." maxlength="7">
-                                    <button onclick="unlockSecondary(2)">Continue</button>
-                                </div>
                             </div>
                         </div>
                     </div>

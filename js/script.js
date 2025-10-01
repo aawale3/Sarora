@@ -532,9 +532,9 @@ class SaraBirthdayAdventure {
         // Initialize scavenger hunt state
         this.scavengerState = {
             event1: false,
+            event1Step1: false,
+            event1Step2: false,
             event2: false,
-            event2Step1: false,
-            event2Step2: false,
             event3: false,
             event3Step1: false,
             event3Step2: false,
@@ -611,11 +611,11 @@ class SaraBirthdayAdventure {
                     // Event 1 is always visible
                     eventCard.style.display = 'block';
                 } else if (i === 2) {
-                    // Event 2 visible after Event 1
-                    eventCard.style.display = this.scavengerState.event1 ? 'block' : 'none';
+                    // Event 2 visible after Event 1 step 2
+                    eventCard.style.display = this.scavengerState.event1Step2 ? 'block' : 'none';
                 } else if (i === 3) {
-                    // Event 3 visible after Event 2 step 2
-                    eventCard.style.display = this.scavengerState.event2Step2 ? 'block' : 'none';
+                    // Event 3 visible after Event 2
+                    eventCard.style.display = this.scavengerState.event2 ? 'block' : 'none';
                 } else if (i === 4) {
                     // Event 4 visible after Event 3 step 2
                     eventCard.style.display = this.scavengerState.event3Step2 ? 'block' : 'none';
@@ -1213,10 +1213,10 @@ function unlockEvent(eventNumber) {
     
     switch (eventNumber) {
         case 1:
-            isCorrect = inputValue === '7197';
+            isCorrect = inputValue.toLowerCase() === 'donuts';
             break;
         case 2:
-            isCorrect = inputValue.toLowerCase() === 'donuts';
+            isCorrect = inputValue === '7197';
             break;
         case 3:
             isCorrect = inputValue.toLowerCase() === 'butterfly';
@@ -1231,8 +1231,8 @@ function unlockEvent(eventNumber) {
     
     if (isCorrect) {
         adventure.scavengerState[`event${eventNumber}`] = true;
-        if (eventNumber === 2) {
-            adventure.scavengerState.event2Step1 = true;
+        if (eventNumber === 1) {
+            adventure.scavengerState.event1Step1 = true;
         } else if (eventNumber === 3) {
             adventure.scavengerState.event3Step1 = true;
         } else if (eventNumber === 4) {
@@ -1279,10 +1279,10 @@ function unlockSecondary(eventNumber) {
     const inputValue = input.value.trim();
     
     let isCorrect = false;
-    if (eventNumber === 2) {
+    if (eventNumber === 1) {
         isCorrect = inputValue === '1012000';
     } else if (eventNumber === 3) {
-        isCorrect = inputValue === '7777';
+        isCorrect = inputValue === '1234';
     } else if (eventNumber === 4) {
         isCorrect = inputValue === '7777';
     }
