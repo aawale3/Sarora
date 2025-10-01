@@ -538,7 +538,10 @@ class SaraBirthdayAdventure {
             event3: false,
             event3Step1: false,
             event3Step2: false,
-            event4: false
+            event4: false,
+            event4Step1: false,
+            event4Step2: false,
+            event5: false
         };
         
         // Open scavenger hunt
@@ -601,7 +604,7 @@ class SaraBirthdayAdventure {
     
     updateEventVisibility() {
         // Show/hide events based on unlock state
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 1; i <= 5; i++) {
             const eventCard = document.getElementById(`event${i}`);
             if (eventCard) {
                 if (i === 1) {
@@ -616,6 +619,9 @@ class SaraBirthdayAdventure {
                 } else if (i === 4) {
                     // Event 4 visible after Event 3 step 2
                     eventCard.style.display = this.scavengerState.event3Step2 ? 'block' : 'none';
+                } else if (i === 5) {
+                    // Event 5 visible after Event 4 step 2
+                    eventCard.style.display = this.scavengerState.event4Step2 ? 'block' : 'none';
                 }
             }
         }
@@ -1210,13 +1216,16 @@ function unlockEvent(eventNumber) {
             isCorrect = inputValue === '7197';
             break;
         case 2:
-            isCorrect = inputValue.toLowerCase() === 'new york';
+            isCorrect = inputValue.toLowerCase() === 'donuts';
             break;
         case 3:
-            isCorrect = inputValue === '1111';
+            isCorrect = inputValue.toLowerCase() === 'butterfly';
             break;
         case 4:
-            isCorrect = inputValue === '1111';
+            isCorrect = inputValue.toLowerCase() === 'hawaii';
+            break;
+        case 5:
+            isCorrect = inputValue === '7777';
             break;
     }
     
@@ -1226,6 +1235,8 @@ function unlockEvent(eventNumber) {
             adventure.scavengerState.event2Step1 = true;
         } else if (eventNumber === 3) {
             adventure.scavengerState.event3Step1 = true;
+        } else if (eventNumber === 4) {
+            adventure.scavengerState.event4Step1 = true;
         }
         
         // Show revealed content
@@ -1267,7 +1278,16 @@ function unlockSecondary(eventNumber) {
     const input = document.getElementById(`event${eventNumber}SecondaryInput`);
     const inputValue = input.value.trim();
     
-    if (inputValue === '1111') {
+    let isCorrect = false;
+    if (eventNumber === 2) {
+        isCorrect = inputValue === '1012000';
+    } else if (eventNumber === 3) {
+        isCorrect = inputValue === '7777';
+    } else if (eventNumber === 4) {
+        isCorrect = inputValue === '7777';
+    }
+    
+    if (isCorrect) {
         adventure.scavengerState[`event${eventNumber}Step2`] = true;
         
         // Hide secondary unlock form
