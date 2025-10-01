@@ -1280,7 +1280,7 @@ function unlockSecondary(eventNumber) {
     
     let isCorrect = false;
     if (eventNumber === 1) {
-        isCorrect = inputValue === '1012000';
+        isCorrect = inputValue === '10012000';
     } else if (eventNumber === 3) {
         isCorrect = inputValue === '1234';
     } else if (eventNumber === 4) {
